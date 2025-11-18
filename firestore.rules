@@ -1,0 +1,58 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Anyone can read their own user document
+      allow read: if isOwner(userId);
+      
+      // Users can create their own document during signup
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      
+      // Users can update their own document
+      allow update: if isOwner(userId);
+      
+      // Users cannot delete their own document (only via Firebase Admin)
+      allow delete: if false;
+    }
+    
+    // Subscriptions collection
+    match /subscriptions/{subscriptionId} {
+      // Users can read their own subscriptions
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      
+      // Users can create subscriptions for themselves
+      allow create: if isAuthenticated() 
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.keys().hasAll(['name', 'category', 'cost', 'currency', 'billingCycle', 'nextPaymentDate', 'isActive', 'autoRenew']);
+      
+      // Users can update their own subscriptions
+      allow update: if isAuthenticated() 
+        && resource.data.userId == request.auth.uid
+        && request.resource.data.userId == request.auth.uid;
+      
+      // Users can delete their own subscriptions
+      allow delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+    
+    // Notifications collection (read-only for users)
+    match /notifications/{notificationId} {
+      // Users can read their own notifications
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      
+      // Only Cloud Functions can write (via Firebase Admin SDK)
+      allow write: if false;
+    }
+  }
+}

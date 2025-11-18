@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📊 SmartManager - Subscription Management SaaS
 
-## Getting Started
+Manage all your subscriptions in one place with automated payment reminders.
 
-First, run the development server:
+## ✨ Features
+
+- 📱 Track all your subscriptions
+- 💰 Monitor monthly/yearly spending
+- 📧 Automated email reminders
+- 📊 Visual analytics dashboard
+- 🔒 Secure authentication
+
+## 🚀 Live Demo
+
+[View Live App](https://smartmanager.vercel.app)
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js 15, React, TypeScript, Tailwind CSS
+- **Backend:** Firebase (Auth, Firestore, Functions)
+- **Email:** Resend API
+- **Deployment:** Vercel
+- **Analytics:** Recharts
+
+## 📦 Installation
+
+### Prerequisites
+
+- Node.js 20+
+- Firebase account
+- Resend API key
+
+### Setup
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/ej84/smartmanager.git
+cd smartmanager
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Set up environment variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+```
+
+4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔒 Firebase Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create a Firebase project at [console.firebase.google.com](https://console.firebase.google.com)
+2. Enable Authentication (Email/Password)
+3. Create a Firestore database
+4. Deploy Firebase Functions (optional for email notifications)
 
-## Learn More
+## 📧 Email Notifications Setup
 
-To learn more about Next.js, take a look at the following resources:
+1. Sign up for [Resend](https://resend.com)
+2. Get your API key
+3. Add to Firebase Functions environment:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+firebase functions:config:set resend.api_key="YOUR_KEY"
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Deployment
 
-## Deploy on Vercel
+### Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push to GitHub
+2. Import project in Vercel
+3. Add environment variables
+4. Deploy!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📸 Screenshots
+
+[Add screenshots here]
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Richard Jeong**
+
+- LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/rjeong397)
+- GitHub: [@yourusername](https://github.com/ej84)
+
+## 🙏 Acknowledgments
+
+- Firebase for the backend infrastructure
+- Vercel for hosting
+- Resend for email services
+
+---
+
+⭐ If you found this project helpful, please give it a star and any feedback will be also appreciated!
