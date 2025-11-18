@@ -1,0 +1,13 @@
+# Vercel 배포 시 무시할 파일/폴더
+
+# Firebase Functions (별도 배포)
+functions/
+
+# Firebase 관련 (Vercel에 불필요)
+.firebase/
+firebase-debug.log
+firestore-debug.log
+
+# 기타
+node_modules/
+.git/
