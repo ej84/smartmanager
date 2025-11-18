@@ -2,9 +2,18 @@
 
 Manage all your subscriptions in one place with automated payment reminders.
 
+## Screenshots
+
+![Dashboard](./public/sample1.png)
+![Subscriptions](./public/sample2.png)
+![Analytics](./public/sample3.png)
+![Mobile](./public/sample4.png)
+![Settings](./public/sample5.png)
+
 ## ✨ Features
 
 - 📱 Track all your subscriptions
+
 - 💰 Monitor monthly/yearly spending
 - 📧 Automated email reminders
 - 📊 Visual analytics dashboard
@@ -12,7 +21,7 @@ Manage all your subscriptions in one place with automated payment reminders.
 
 ## 🚀 Live Demo
 
-[View Live App](https://smartmanager.vercel.app)
+[View Live App](https://smartmanager-two.vercel.app)
 
 ## 🛠️ Tech Stack
 

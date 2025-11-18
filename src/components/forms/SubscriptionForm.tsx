@@ -118,7 +118,7 @@ export const SubscriptionForm: React.FC<SubscriptionFormProps> = ({
 
       <Input
         type="date"
-        label="다음 결제일"
+        label="Next Payment Date"
         {...register("nextPaymentDate")}
         error={errors.nextPaymentDate?.message}
       />
