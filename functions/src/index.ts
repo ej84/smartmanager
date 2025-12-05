@@ -11,7 +11,7 @@ const db = admin.firestore();
 
 // Get API key from environment (set via firebase functions:config:set)
 const RESEND_API_KEY = process.env.RESEND_API_KEY || '';
-const APP_URL = process.env.APP_URL || 'http://localhost:3000';
+const APP_URL = process.env.APP_URL || 'https://smartmanager-two.vercel.app/';
 
 // Test function (Hello World) - US East 1 region
 export const helloWorld = onRequest(
@@ -111,7 +111,7 @@ export const checkUpcomingPayments = onSchedule(
 
           // Generate email HTML
           const emailHtml = getMultiplePaymentsEmail(
-            user.displayName || 'User',
+            user.name || 'User',
             paymentInfos,
             APP_URL
           );
@@ -203,7 +203,7 @@ export const sendPaymentReminder = onCall(
 
       // Send email
       const emailHtml = getPaymentReminderEmail(
-        user.displayName,
+        user.name,
         subscription.name,
         formatCurrency(subscription.cost, subscription.currency),
         formatDate(paymentDate),
@@ -269,7 +269,7 @@ function getPaymentReminderEmail(
               <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                 <tr>
                   <td style="background: linear-gradient(135deg, #0ea5e9 0%, #a855f7 100%); padding: 30px; border-radius: 12px 12px 0 0; text-align: center;">
-                    <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">SubManager</h1>
+                    <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">SmartManager</h1>
                   </td>
                 </tr>
                 <tr>
@@ -366,7 +366,7 @@ function getMultiplePaymentsEmail(
               <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                 <tr>
                   <td style="background: linear-gradient(135deg, #0ea5e9 0%, #a855f7 100%); padding: 30px; border-radius: 12px 12px 0 0; text-align: center;">
-                    <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">SubManager</h1>
+                    <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">SmartManager</h1>
                   </td>
                 </tr>
                 <tr>
