@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://smartmanager-two.vercel.app"),
   title: "SmartManager - Subscription Management Tool",
   description:
     "Manage all your SaaS subscriptions in one place. Track payments, analyze spending, and save money.",
@@ -24,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko">
+    <html lang="en">
       <body className={inter.className}>
         <Navbar />
         {children}
