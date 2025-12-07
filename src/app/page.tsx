@@ -117,27 +117,27 @@ export default function HomePage() {
               </h2>
               <div className="space-y-4 text-lg text-gray-600">
                 <p>
-                  The average person spends over
+                  The average person spends over{" "}
                   <span className="font-bold text-primary-600">
                     $200 per month
-                  </span>
+                  </span>{" "}
                   on subscriptions they don&apos;t fully use. From streaming
                   services like Netflix and Disney+ to SaaS tools like Adobe
                   Creative Cloud and Microsoft 365, it&apos;s easy to lose track
                   of recurring payments.
                 </p>
                 <p>
-                  SmartManager is a<strong>subscription management tool</strong>
-                  designed to help you monitor all your subscriptions in one
-                  centralized dashboard. Track payment dates, analyze your
-                  spending habits, and discover which services you&apos;re
-                  actually using.
+                  SmartManager is a{" "}
+                  <strong>subscription management tool</strong> designed to help
+                  you monitor all your subscriptions in one centralized
+                  dashboard. Track payment dates, analyze your spending habits,
+                  and discover which services you&apos;re actually using.
                 </p>
                 <p>
                   With automatic payment reminders, you&apos;ll never face
                   surprise charges again. Our spending analytics show you
                   exactly where your money goes each month, helping you identify
-                  subscriptions you can cancel to
+                  subscriptions you can cancel to{" "}
                   <strong>save hundreds of dollars per year</strong>.
                 </p>
               </div>
